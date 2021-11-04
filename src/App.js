@@ -1,24 +1,16 @@
-import React, { useEffect } from 'react';
-import './App.css';
-import Provider from './context/Provider';
-import { getInfos } from './services/requestTmdb';
+import React from 'react';
+import Provider from './context/Provider'
+import { Route, Switch } from 'react-router';
+import Login from './pages/Login';
+import HomePage from './pages/HomePage';
 
 function App() {
-
-  useEffect(() => {
-    const getLists = async () => {
-      const list = await getInfos();
-      console.log(list);
-    }
-
-    getLists();
-  }, []);
-
   return (
     <Provider>
-      <div className="App">
-        Hellowwwww
-      </div>
+      <Switch>
+        <Route path="/homepage" component={ HomePage } />
+        <Route path="/" component={ Login } />
+      </Switch>
     </Provider>
   );
 }

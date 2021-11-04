@@ -14,4 +14,5 @@ export default function Provider({ children }) {
 
 Provider.propTypes = {
   children: PropTypes.objectOf(PropTypes.object).isRequired,
+  /* children: PropTypes.string.isRequired, */
 };
