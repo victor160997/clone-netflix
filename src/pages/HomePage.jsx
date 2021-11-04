@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getInfos } from '../services/requestTmdb';
 import { renderList } from './FunctionsHp';
+import { Category } from './styles';
 
 export default function HomePage() {
 
@@ -18,9 +19,9 @@ export default function HomePage() {
 
   return (
     <div>
-      <section>
+      <Category>
         { lists.map((list) => renderList(list)) }
-      </section>
+      </Category>
     </div>
   )
 }
