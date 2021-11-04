@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import Provider from './context/Provider';
 import { getInfos } from './services/requestTmdb';
 
 function App() {
@@ -14,9 +15,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      Hellowwwww
-    </div>
+    <Provider>
+      <div className="App">
+        Hellowwwww
+      </div>
+    </Provider>
   );
 }
 
