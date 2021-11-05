@@ -1,6 +1,6 @@
 import React from "react";
 
-function renderImage(list) {
+export const renderImage = (list) => {
   const baseUrlImgList = 'https://image.tmdb.org/t/p/w200';
   return list.items.results.map((movie) => (
     <img
