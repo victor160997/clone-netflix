@@ -16,7 +16,9 @@ export function renderList(list) {
     <div key={ list.category }>
       <h2>{ list.title }</h2>
       <div>
-        { list.items.results && renderImage(list) }
+        <div>
+          { list.items.results && renderImage(list) }
+        </div>
       </div>
     </div>
   );

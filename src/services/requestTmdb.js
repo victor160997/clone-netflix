@@ -66,3 +66,20 @@ export const getInfos = async () => {
     }
   ];
 }
+
+export const getInfosMovie = async (movieId, type) => {
+  let info = {};
+  if(movieId) {
+    switch(type) {
+      case 'movie': 
+        info = await fetchDataBase(`/movie/${movieId}?${languageAndKey}`);
+        break;    
+      case 'tv':
+        info = await fetchDataBase(`/tv/${movieId}?${languageAndKey}`);
+        break;
+      default:
+        return undefined;  
+    }
+  }
+  return info;
+}
