@@ -99,8 +99,11 @@ export const Category = styled.section`
   background-color: transparent;
   div {
     background-color: transparent;
+    :hover svg {
+      opacity: 1;
+    }
     h2 {
-      margin: 0 0 0 30px;
+      margin: 15px 0 0 30px;
       background-color: transparent;
     }
     div {
@@ -121,5 +124,89 @@ export const Category = styled.section`
         }
       }
     }
+  }
+`;
+
+export const HeaderPage = styled.header`
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 35px;
+  padding-right: 35px;
+  align-items: center;
+  background: ${ ({ background }) => background
+    ? `background-color: rgb(17, 17, 17, 0.8)`
+    : `linear-gradient(to bottom, #111 15%, transparent 85%)` };
+  transition: all ease 0.5s;
+  nav {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      background-color: transparent;
+      height: 25px;
+      margin-right: 40px;
+      cursor: pointer;
+    }
+    p {
+      background-color: transparent;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+  }
+  div {
+    background-color: transparent;
+    img {
+      background-color: transparent;
+      height: 35px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    svg {
+      background-color: transparent;
+      height: 35px;
+      margin-right: 25px;
+      cursor: pointer;
+      path {
+        background-color: transparent;
+      }
+    }
+  }
+`;
+
+export const MovieRight = styled.div`
+  svg {
+    position: absolute;
+    width: 60px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* margin-left: -55px; */
+    right: 0;
+    z-index: 99;
+    opacity: 0;
+    cursor: pointer;
+  }
+  ${Category}:hover svg {
+    opacity: 0.8;
+  }
+`;
+
+export const MovieLeft = styled.div`
+  svg {
+    position: absolute;
+    width: 60px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* margin-left: -55px; */
+    left: 0;
+    z-index: 99;
+    opacity: 0;
+    cursor: pointer;
   }
 `;
