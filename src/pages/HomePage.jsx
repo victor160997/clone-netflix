@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import FeaturedMovie from '../components/FeaturedMovie';
 import Header from '../components/Header';
 import { getInfos } from '../services/requestTmdb';
-import { renderList } from './FunctionsHp';
+import RenderList from './RenderList';
+
 import { Category, Home } from './styles';
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
   const [lists, setLists] = useState([]);
   const [featured, setFeatured] = useState(null);
   const [black, setBlack] = useState(false);
+  // eslint-disable-next-line no-unused-vars
 
   const selectFeatured = (lists) => {
     const originals = lists.find((list) => list.category === 'originals');
@@ -50,7 +52,7 @@ export default function HomePage() {
       <Header background={ black } />
       { featured && <FeaturedMovie item={ featured } />}
       <Category>
-        { lists.map((list) => renderList(list)) }
+        { lists.map((list, i) => <RenderList key={ i } list={list}/>) }
       </Category>
     </Home>
   )

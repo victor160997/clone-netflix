@@ -107,12 +107,15 @@ export const Category = styled.section`
       background-color: transparent;
     }
     div {
+      background-color: transparent;
       overflow-x: hidden;
       padding-left: 30px;
       div {
+        background-color: transparent;
+        max-width: max-content;
         display: flex;
-        max-width: 100vw;
         padding-left: 0px;
+        transition: all ease 0.5s;
         img {
           transition: all ease 0.2s;
           width: 150px;
@@ -158,6 +161,10 @@ export const HeaderPage = styled.header`
       background-color: transparent;
       margin-right: 15px;
       cursor: pointer;
+      transition: all ease 0.25s;
+    }
+    p:hover {
+      color: #999;
     }
   }
   div {
@@ -183,7 +190,7 @@ export const HeaderPage = styled.header`
 export const MovieRight = styled.div`
   svg {
     position: absolute;
-    width: 60px;
+    width: 45px;
     height: 225px;
     background-color: rgba(0, 0, 0, 0.6);
     /* margin-left: -55px; */
@@ -191,6 +198,7 @@ export const MovieRight = styled.div`
     z-index: 99;
     opacity: 0;
     cursor: pointer;
+    transition: all ease 0.25s;
   }
   ${Category}:hover svg {
     opacity: 0.8;
@@ -200,7 +208,7 @@ export const MovieRight = styled.div`
 export const MovieLeft = styled.div`
   svg {
     position: absolute;
-    width: 60px;
+    width: 45px;
     height: 225px;
     background-color: rgba(0, 0, 0, 0.6);
     /* margin-left: -55px; */
@@ -208,5 +216,52 @@ export const MovieLeft = styled.div`
     z-index: 99;
     opacity: 0;
     cursor: pointer;
+    transition: all ease 0.25s;
+  }
+`;
+
+export const LoginPage = styled.div`
+  background-image: url(${ props => `${ props.background }`});
+  background-size: cover;
+  width: 99.6vw;
+  height: 99.1vh;
+  margin: -5px -5px -5px -5px;
+  img {
+    height: 45px;
+    margin-left: 3%;
+    margin-top: 20px;
+    background-color: transparent;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 0 33vw 0 33vw;
+    padding: 40px 68px 40px;
+    h1 {
+        background-color: transparent;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 28px;
+      }
+    form {
+      background-color: transparent;
+      input {
+        background-color: transparent;
+        border-radius: 4px;
+        border: 0;
+        color: #fff;
+        height: 50px;
+        line-height: 50px;
+        padding: 16px;
+        width: 100%;
+        color: #8c8c8c;
+        font-size: 18px;
+        background-color: #333;
+        margin-bottom: 18px;
+      }
+    }
   }
 `;
