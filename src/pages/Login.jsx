@@ -40,7 +40,6 @@ export default function Login() {
     if(usuario.email.length < 5 || usuario.password.length < 4) {
       setValidity(false);
     } else {
-      /* history.push('/homepage'); */
       setLog(true)
     }
   }
