@@ -8,7 +8,7 @@ function App() {
   return (
     <Provider>
       <Switch>
-        <Route path="/home-page" component={ HomePage } />
+        <Route path="/movie-page" component={ HomePage } />
         <Route path="/" component={ Login } />
       </Switch>
     </Provider>

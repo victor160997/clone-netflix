@@ -116,7 +116,7 @@ describe('Testa a tela de login', () => {
 
     expect(textValidityPassword[0]).not.toBeVisible();
     expect(textValidityPassword[1]).not.toBeVisible();
-    expect(history.location.pathname).toBe('/home-page');
+    expect(history.location.pathname).toBe('/movie-page');
 
   });
 });
