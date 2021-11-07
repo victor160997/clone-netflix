@@ -26,11 +26,12 @@ export const Featured = styled.div`
         margin-bottom: 0;
       }
       section {
+        background-color: transparent;
         font-size: 18px;
         font-weight: bold;
         margin-top: 15px;
         display: flex;
-        width: 300px;
+        width: 350px;
 
         p {
           margin: 0;
@@ -103,7 +104,7 @@ export const Category = styled.section`
       opacity: 1;
     }
     h2 {
-      margin: 15px 0 0 30px;
+      margin: 5px 0 0 30px;
       background-color: transparent;
     }
     div {
@@ -116,14 +117,45 @@ export const Category = styled.section`
         display: flex;
         padding-left: 0px;
         transition: all ease 0.5s;
-        img {
-          transition: all ease 0.2s;
+        padding-bottom: 0;
+        section {
+          background-color: transparent;
           width: 150px;
-          transform: scale(0.9);
-          cursor: pointer;
+          transition: all ease 0.2s;
+          height: max-content;
+          img {
+            width: 150px;
+            transform: scale(0.9);
+            cursor: pointer;
+            transition: all ease 0.2s;
+          }
+          /* img:hover {
+            transform: scale(1);
+            box-shadow: 0 5px 15px black;
+            display: inherit;
+          } */
+          svg {
+            visibility: hidden;
+            transition: all ease 0.2s;
+            margin: 5px;
+            cursor: pointer;
+          }
         }
-        img:hover {
-          transform: scale(1);
+        section:hover {
+          box-shadow: 0 5px 15px black;
+          svg {
+            visibility: visible;
+          }
+          svg:hover {
+            fill: #46d369;
+          }
+          svg:active {
+            fill: white;
+          }
+          img {
+            transform: scale(1);
+            display: inherit;
+          }
         }
       }
     }
@@ -161,10 +193,14 @@ export const HeaderPage = styled.header`
       background-color: transparent;
       margin-right: 15px;
       cursor: pointer;
+      text-decoration: none;
       transition: all ease 0.25s;
     }
     p:hover {
       color: #999;
+    }
+    a {
+      text-decoration: none;
     }
   }
   div {
@@ -232,35 +268,71 @@ export const LoginPage = styled.div`
     margin-top: 20px;
     background-color: transparent;
   }
-  section {
+  div {
+    background-color: transparent;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.7);
-    margin: 0 33vw 0 33vw;
-    padding: 40px 68px 40px;
-    h1 {
+    align-items: center;
+    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      background-color: rgba(0, 0, 0, 0.7);
+      max-width: 470px;
+      min-width: 470px;
+      height: 620px;
+      padding: 40px 68px 40px;
+      h1 {
+          background-color: transparent;
+          font-size: 32px;
+          font-weight: 700;
+          margin-bottom: 28px;
+        }
+      form {
         background-color: transparent;
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 28px;
-      }
-    form {
-      background-color: transparent;
-      input {
-        background-color: transparent;
-        border-radius: 4px;
-        border: 0;
-        color: #fff;
-        height: 50px;
-        line-height: 50px;
-        padding: 16px;
         width: 100%;
-        color: #8c8c8c;
-        font-size: 18px;
-        background-color: #333;
-        margin-bottom: 18px;
+        input {
+          background-color: transparent;
+          border-radius: 4px;
+          border: solid #e87c03 ${({validity}) => validity ? 0 : `2px`};
+          border-top: 0;
+          border-left: 0;
+          border-right: 0;
+          color: #fff;
+          height: 50px;
+          line-height: 50px;
+          padding: 16px;
+          width: 100%;
+          color: #8c8c8c;
+          font-size: 18px;
+          background-color: #333;
+          margin-bottom: 18px;
+        }
+        input:focus {
+          color: white;
+        }
+        p {
+          display:${({validity}) => validity ? `none` : `inherit`};
+          background-color: transparent;
+          color: #e87c03;
+          margin-top: -15px;
+          padding: 6px 3px;
+          font-size: 13px;
+        }
+        button {
+          border-radius: 4px;
+          font-size: 16px;
+          font-weight: 700;
+          margin: 24px 0 12px;
+          width: 100%;
+          max-width: 100%;
+          padding: 16px;
+          text-decoration: none;
+          background: #e50914;
+          border:none;
+          cursor: pointer;
+        }
       }
     }
   }
