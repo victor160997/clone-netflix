@@ -15,7 +15,9 @@ export default function Header({ background }) {
         <a href="#originals">
           <p>Séries</p>
         </a>
+        <a href="#mylist">
         <p>Minha lista</p>
+        </a>
         <a href="#toprated">
           <p>Em alta</p>
         </a>

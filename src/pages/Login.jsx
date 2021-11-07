@@ -88,7 +88,7 @@ export default function Login() {
           </form>
         </section>
       </div>
-      { log && <Redirect to="/homepage" /> }
+      { log && <Redirect to="/home-page" /> }
     </LoginPage>
   )
 }
