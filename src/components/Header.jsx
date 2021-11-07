@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HeaderPage } from '../pages/styles';
+import { HeaderPage } from './HeaderStyles';
 import imageNetflix from './imageNetflix.png'
 
 export default function Header({ background }) {
