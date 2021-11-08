@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-import React, { useContext, useEffect } from 'react';
-import { getInfosMovie } from '../services/requestTmdb';
-import { useState } from 'react/cjs/react.development';
+import React, { useContext,/* , useEffect */ } from 'react';
+/* import { getInfosMovie } from '../services/requestTmdb';
+import { useState } from 'react/cjs/react.development'; */
 import { Assistir, Featured, MInhaLista } from './FeaturedMovieStyles';
 import Context from '../context/Context';
 
 export default function FeaturedMovie({ item }) {
 
   // estado que armazana as informações do "featured movie"
-  const [selected, setSelected] = useState(null);
+  /* const [selected, setSelected] = useState(); */
 
   // url base do endereço das imagens
   const baseUrlImgList = 'https://image.tmdb.org/t/p/original';
@@ -17,13 +17,13 @@ export default function FeaturedMovie({ item }) {
   const { myList, setmyList } = context;
 
   // requisição das informações mais detalhadas do "featured movie"
-  useEffect(() => {
+  /* useEffect(() => {
     const getInfos = async () => {
-      const infos = await getInfosMovie(item.id, 'tv');
+      const infos = await getInfosMovie(Number(item.id));
       setSelected(infos);
     }
     getInfos();
-  }, []);
+  }, []); */
 
   const adcMylist = (movie) => {
     const alreadyExist = myList[0].items.results.some((mv) => mv.id === movie.id);
@@ -44,21 +44,21 @@ export default function FeaturedMovie({ item }) {
     >
     <div>
         <div>
-          { console.log(selected) }
-          <h1>{ selected && selected.original_name }</h1>
+          { console.log(item) }
+          <h1>{ item && item.original_name }</h1>
           <section>
-            <p>{ selected && selected.vote_average } pontos</p>
-            <span>{ selected && new Date(selected.first_air_date).getFullYear() }</span>
+            <p>{ item && item.vote_average } pontos</p>
+            <span>{ item && /* new Date(selected.first_air_date).getFullYear() */ 2021}</span>
             <span>
-              { selected && selected.number_of_seasons } temporada{ Number(selected && selected.number_of_seasons) > 1 && 's'}
+              { item && '2 temporadas'/* selected.number_of_seasons } temporada{ Number(selected && selected.number_of_seasons) > 1 && 's' */}
             </span>
           </section>
-          <p>{ selected && selected.overview }</p>
+          <p>{ item && item.overview }</p>
           <nav>
             <Assistir type="button">▶ Assistir</Assistir>
             <MInhaLista
               type="button"
-              onClick={ () => adcMylist(selected) }
+              onClick={ () => adcMylist(item) }
             >
               + Minha Lista
             </MInhaLista>

@@ -1,17 +1,6 @@
 const urlBase = 'https://api.themoviedb.org/3';
 const languageAndKey = '&api_key=e70501c774a05cf85580e32a27897dc6&language=pt-BR';
 
-/* 
-- originais netflix
-- recomendados
-- em alta
-- ação
-- comédia
-- terror
-- romance
-- documentários
-*/
-
 async function fetchDataBase(endpoint) {
   try {
     const response = await fetch(`${urlBase}${endpoint}${languageAndKey}`);
@@ -67,19 +56,7 @@ export const getInfos = async () => {
   ];
 }
 
-export const getInfosMovie = async (movieId, type) => {
-  let info = {};
-  if(movieId) {
-    switch(type) {
-      case 'movie': 
-        info = await fetchDataBase(`/movie/${movieId}?${languageAndKey}`);
-        break;    
-      case 'tv':
-        info = await fetchDataBase(`/tv/${movieId}?${languageAndKey}`);
-        break;
-      default:
-        return undefined;  
-    }
-  }
+export const getInfosMovie = async (movieId) => {
+  const info = await fetchDataBase(`/tv/${movieId}?`);
   return info;
 }
