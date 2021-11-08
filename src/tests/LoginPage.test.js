@@ -99,7 +99,7 @@ describe('Testa a tela de login', () => {
 
   });
 
-  it('Testa se quando o e-mail e asenha são inseridos corretamente, a página é redirecionada para /homepage', () => {
+  it('Testa se quando o e-mail e asenha são inseridos corretamente, a página é redirecionada para /movie-page', () => {
     const { history } = renderWithRouter(<Login />);
 
     const inputEmail = screen.getByTestId('input-email');

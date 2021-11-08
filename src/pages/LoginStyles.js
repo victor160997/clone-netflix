@@ -83,7 +83,7 @@ export const LoginPage = styled.div`
       }
     }
   }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 769px) {
     background-image: url(${ props => `${ props.background }`});
     background-size: cover;
     width: 100vw;
@@ -150,6 +150,15 @@ export const LoginPage = styled.div`
             border:none;
             cursor: pointer;
           }
+        }
+      }
+    }
+  }
+  div {
+    section {
+      form {
+        p {
+          display:${({validity}) => validity ? `none` : `inherit`};
         }
       }
     }

@@ -19,7 +19,7 @@ export const MovieRight = styled.div`
   }
   @media screen and (max-width: 760px) {
     svg {
-      margin-right: -19px;
+      margin-right: -25px;
       opacity: 1;
     }  
   }
