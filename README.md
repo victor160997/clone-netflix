@@ -1,4 +1,4 @@
-#Projeto Clone Netflix
+<h1>Projeto Clone Netflix</h1>
 
 ###  Nesse projeto foi desenvolvido o clone da página de Login e da Página principal da Netflix.
 ### O que foi utilizado nesse projeto:
@@ -8,4 +8,4 @@
 * Foram desenvolvidos alguns testes utilizando a React Testing Library
 * Foi utilizada a API <a href="https://www.themoviedb.org/documentation/api?language=pt-BR" target=_blank>The Movie DB</a> para fazer as requisições e pegar as informações dos filmes.
 
-##Link do deploy da aplicação: <a href="https://victor160997.github.io/clone-netflix/" target=_blank>Clone Netflix</a>
+###Link do deploy da aplicação: <a href="https://victor160997.github.io/clone-netflix/" target=_blank>Clone Netflix</a>
