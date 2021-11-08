@@ -12,9 +12,13 @@ export default function Provider({ children }) {
     }
   }]);
 
+  const [searching, setSearching] = useState(false);
+
   const globalState = {
     myList,
-    setmyList
+    setmyList,
+    searching,
+    setSearching
   }
 
   return (

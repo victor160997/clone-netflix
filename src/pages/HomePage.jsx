@@ -65,9 +65,9 @@ export default function HomePage({ history }) {
 
   return (
     <Home>
-      <Header background={ black } />
-      { featured && <FeaturedMovie item={ featured } />}
-      <Category>
+      <Header background={ black } lists={ lists }/>
+      { featured && context.searching === false && <FeaturedMovie item={ featured } />}
+      { context.searching === false &&  <Category>
         {/* renderiza lista de filmes que foram retirados da API */}
         { lists.map((list, i) => <RenderList key={ i } list={list} ItsMyList={ false } history={ history } />) }
 
@@ -75,7 +75,7 @@ export default function HomePage({ history }) {
         { context.myList[0].items.results.length > 0
           && context.myList
           .map((list, i) => <RenderList key={ i } list={list} ItsMyList={ true } history={ history } />) }
-      </Category>
+      </Category> }
     </Home>
   )
 }

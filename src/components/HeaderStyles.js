@@ -6,7 +6,8 @@ export const HeaderPage = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: ${ ({ searching }) => searching ? 'max-content' : '60px' };
+  overflow-y: ${ ({ searching }) => searching ? 'auto' : 'hidden' };;
   display: flex;
   justify-content: space-between;
   padding-left: 35px;
