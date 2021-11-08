@@ -57,12 +57,15 @@ export default function FeaturedMovie({ item }) {
           <p>{ item && item.overview }</p>
           <nav>
             <Assistir type="button">▶ Assistir</Assistir>
-            <MInhaLista
-              type="button"
-              onClick={ () => adcMylist(item) }
-            >
-              + Minha Lista
-            </MInhaLista>
+            <a href="#mylist">
+              <MInhaLista
+                href="#mylist"
+                type="button"
+                onClick={ () => adcMylist(item) }
+              >
+                + Minha Lista
+              </MInhaLista>
+            </a>
           </nav>
           <span><strong>Gênero:</strong></span>
         </div>
