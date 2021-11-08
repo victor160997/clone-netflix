@@ -83,6 +83,36 @@ export const Featured = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 760px) {
+    margin: 0px -28px 0 -8px;
+    height: 90vh;
+    div {
+      div {
+        h1 {
+          font-size: 40px;
+        }
+        section {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+          max-width: 100%;
+          margin-right: 30px;
+        }
+        nav {
+          button {
+            font-size: 16px;
+          }
+        }
+        span {
+          strong {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
   `;
 
   export const Assistir = styled.button`

@@ -17,6 +17,12 @@ export const MovieRight = styled.div`
   ${Category}:hover svg {
     opacity: 0.8;
   }
+  @media screen and (max-width: 760px) {
+    svg {
+      margin-right: -19px;
+      opacity: 1;
+    }  
+  }
 `;
 
 export const MovieLeft = styled.div`
@@ -31,5 +37,10 @@ export const MovieLeft = styled.div`
     opacity: 0;
     cursor: pointer;
     transition: all ease 0.25s;
+  }
+  @media screen and (max-width: 760px) {
+    svg {
+      opacity: 1;
+    }  
   }
 `;

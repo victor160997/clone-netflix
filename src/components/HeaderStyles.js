@@ -41,6 +41,11 @@ export const HeaderPage = styled.header`
       background-color: transparent;
       text-decoration: none;
     }
+    @media screen and (max-width: 760px) {
+      a {
+        display: none;
+      }
+    }
   }
   div {
     background-color: transparent;

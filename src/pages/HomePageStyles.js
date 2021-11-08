@@ -64,4 +64,7 @@ export const Category = styled.section`
       }
     }
   }
+  @media screen and (max-width: 760px) {
+    margin-right: -28px;
+  }
 `;
