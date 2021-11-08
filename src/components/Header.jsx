@@ -9,7 +9,7 @@ export default function Header({ background }) {
     <HeaderPage background={ background }>
       <nav>
         <img src={ imageNetflix } alt="logo netflix"/>
-        <Link to="/homepage">
+        <Link to="/movie-page">
           <p>Inicio</p>
         </Link>
         <a href="#originals">

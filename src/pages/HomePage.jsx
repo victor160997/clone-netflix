@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useEffect, useState } from 'react';
 import FeaturedMovie from '../components/FeaturedMovie';
@@ -7,7 +8,7 @@ import RenderList from '../components/RenderList';
 import { Category, Home } from './HomePageStyles';
 import Context from '../context/Context';
 
-export default function HomePage() {
+export default function HomePage({ history }) {
 
   const context = useContext(Context);
 
@@ -55,18 +56,25 @@ export default function HomePage() {
     }
   }, [])
 
+  useEffect(() => {
+    const favoriteFilms = JSON.parse(localStorage.getItem('favoriteFilms'));
+    if (!favoriteFilms) {
+      localStorage.setItem('favoriteFilms', JSON.stringify([]));
+    }
+  }, []);
+
   return (
     <Home>
       <Header background={ black } />
       { featured && <FeaturedMovie item={ featured } />}
       <Category>
         {/* renderiza lista de filmes que foram retirados da API */}
-        { lists.map((list, i) => <RenderList key={ i } list={list} ItsMyList={ false }/>) }
+        { lists.map((list, i) => <RenderList key={ i } list={list} ItsMyList={ false } history={ history } />) }
 
         {/* renderiza "Minha lista" se existir */}
         { context.myList[0].items.results.length > 0
           && context.myList
-          .map((list, i) => <RenderList key={ i } list={list} ItsMyList={ true } />) }
+          .map((list, i) => <RenderList key={ i } list={list} ItsMyList={ true } history={ history } />) }
       </Category>
     </Home>
   )

@@ -35,7 +35,7 @@ export default function FeaturedMovie({ item }) {
         results: [...myList[0].items.results, movie],
       }
     }]);
-  }
+  };
 
   return (
     <Featured
@@ -44,13 +44,14 @@ export default function FeaturedMovie({ item }) {
     >
     <div>
         <div>
-          { console.log(item) }
           <h1>{ item && item.original_name }</h1>
           <section>
             <p>{ item && item.vote_average } pontos</p>
-            <span>{ item && /* new Date(selected.first_air_date).getFullYear() */ 2021}</span>
+            <span>{ item && new Date(item.first_air_date).getFullYear() }</span>
             <span>
-              { item && '2 temporadas'/* selected.number_of_seasons } temporada{ Number(selected && selected.number_of_seasons) > 1 && 's' */}
+              { item && (new Date().getFullYear() - new Date(item.first_air_date).getFullYear()) < 2 ? '1 temporada'
+                : `${new Date().getFullYear() - new Date(item.first_air_date).getFullYear()} temporadas`
+                /* selected.number_of_seasons } temporada{ Number(selected && selected.number_of_seasons) > 1 && 's' */}
             </span>
           </section>
           <p>{ item && item.overview }</p>
