@@ -64,7 +64,7 @@ export const renderImage = (list, myList, setmyList, ItsMyList, history) => {
   ))
 }
 
-// função que lida com o botão esquerdo da barra de rolagem
+// ffunção que lida com o botão esquerdo da barra de rolagem
 const handleLeft = (moveX, setMoveX) => {
   let x = moveX + Math.round(window.innerWidth / 2);
   if(x > 0) {
